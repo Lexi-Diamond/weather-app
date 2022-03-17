@@ -14,19 +14,21 @@
     <nav class="navbar navbar-light bg-light">
         <span class="navbar-brand mb-0 h1">Weather Dashboard</span>
     </nav>
-    <div class ="container">
+    <div class ="container col md-12">
       <div class ="row">
         <div class="card col-md-3">
             <div class="card-body">
             <h5 class="card-title">Search any City</h5>
             <input id="userInput" class="form-control m-1 p-1 userInput" type="text" placeholder="Search">
             <a href="#" class="btn btn-primary searchBtn">Go somewhere</a>
+            <div class="savedCitiesButtons"></div>
             </div>
         </div>
         <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-12">
         <div class="jumbotron">
-            <h1 class="display-4">City Name</h1>
+            <h1 class="display-4 cityName"></h1>
+            <h2 class="currentWeather"></h2>
             <div class="lead">
             </div>
           </div>
