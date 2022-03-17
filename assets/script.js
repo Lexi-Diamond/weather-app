@@ -75,34 +75,78 @@ console.log(geoURL)
               currentWeather.append(currentWeatherIcon).append(currentTemp).append(currentWindSpeed).append(currentHumidity)
             
 
-            var dailyWeather = $('dailyWeather');
-            $("<li>")
-            .text(
-              "Temp: " + data[0]
-            )
-            
-           
+              var dailyWeather = $('.dailyWeather');
+              var dailyWeatherIcon = $("<img>").attr("src", `http://openweathermap.org/img/wn/${data.daily[0].weather[0].icon}@2x.png`)
+              var dailyTemp = $("<li>")
+              .text(
+              "Temp: " + data.daily[0].temp.day)
+              var dailyWind = $("<li>")
+              .text(
+                "Wind: " + data.daily[0].wind_speed)
+              var dailyHumidity = $("<li>")
+              .text(
+                "Humidity: " + data.daily[0].humidity)
+              
+                dailyWeather.append(dailyWeatherIcon).append(dailyTemp).append(dailyWind).append(dailyHumidity)
+                
+              var dailyWeather1 = $('.dailyWeather1')
+              var dailyWeatherIcon1 = $("<img>").attr("src", `http://openweathermap.org/img/wn/${data.daily[1].weather[0].icon}@2x.png`)
+              var dailyTemp1 = $("<li>")
+              .text(
+              "Temp: " + data.daily[1].temp.day)
+              var dailyWind1 = $("<li>")
+              .text(
+                "Wind: " + data.daily[1].wind_speed)
+              var dailyHumidity1 = $("<li>")
+              .text(
+                "Humidity: " + data.daily[1].humidity)
+              
+                dailyWeather1.append(dailyWeatherIcon1).append(dailyTemp1).append(dailyWind1).append(dailyHumidity1)
 
-            // var currentWeather = $('.currentWeather')
-            // .text(data[0].name.current.temp)
-            // $("<h3>")
-            // .text(data)
-            // .appendTo(currentWeather);
+              var dailyWeather2 = $('.dailyWeather2')
+              var dailyWeatherIcon2 = $("<img>").attr("src", `http://openweathermap.org/img/wn/${data.daily[2].weather[0].icon}@2x.png`)
+              var dailyTemp2 = $("<li>")
+              .text(
+              "Temp: " + data.daily[2].temp.day)
+              var dailyWind2 = $("<li>")
+              .text(
+                "Wind: " + data.daily[2].wind_speed)
+              var dailyHumidity2 = $("<li>")
+              .text(
+                "Humidity: " + data.daily[2].humidity)
+              
+                dailyWeather2.append(dailyWeatherIcon2).append(dailyTemp2).append(dailyWind2).append(dailyHumidity2)
 
-        // var currentWeather = $('.currentWeather')
-        // .text(data[0].current.temp)
-        // .text(data[0].current.wind_speed)
-        // appendTo(currentWeather)
-
-      });
-    });
+                var dailyWeather3 = $('.dailyWeather3')
+                var dailyWeatherIcon3 = $("<img>").attr("src", `http://openweathermap.org/img/wn/${data.daily[3].weather[0].icon}@2x.png`)
+                var dailyTemp3 = $("<li>")
+                .text(
+                "Temp: " + data.daily[3].temp.day)
+                var dailyWind3 = $("<li>")
+                .text(
+                  "Wind: " + data.daily[3].wind_speed)
+                var dailyHumidity3 = $("<li>")
+                .text(
+                  "Humidity: " + data.daily[3].humidity)
+                
+                  dailyWeather3.append(dailyWeatherIcon3).append(dailyTemp3).append(dailyWind3).append(dailyHumidity3)
+                  
+                  var dailyWeather4 = $('.dailyWeather4')
+                  var dailyWeatherIcon4 = $("<img>").attr("src", `http://openweathermap.org/img/wn/${data.daily[4].weather[0].icon}@2x.png`)
+                  var dailyTemp4 = $("<li>")
+                  .text(
+                  "Temp: " + data.daily[4].temp.day)
+                  var dailyWind4 = $("<li>")
+                  .text(
+                    "Wind: " + data.daily[4].wind_speed)
+                  var dailyHumidity4 = $("<li>")
+                  .text(
+                    "Humidity: " + data.daily[4].humidity)
+                  
+                    dailyWeather4.append(dailyWeatherIcon4).append(dailyTemp4).append(dailyWind4).append(dailyHumidity4)
+      })
+      })
     
 
-}
-    
 
-    // cityInfo();
-
-
-      //"http://api.openweathermap.org/geo/1.0/direct?q=" + userRequest + "&limit=5&appid=8d68dd5ea4e78aa35a048f052125b784"
-    //   "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon "&appid=8d68dd5ea4e78aa35a048f052125b784"
+    }
