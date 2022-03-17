@@ -21,31 +21,9 @@ function makeBtn () {
   console.log(localStorage.getItem('userInput'))
   var searchedCitiesArr = localStorage.getItem('userInput').split(',')
   for(let i = 0; i < searchedCitiesArr.length; i++) {
-    $(savedCitiesButtons).append(`<button class="">${searchedCitiesArr[i]}</button>`)
-
-    // searchedCitiesBtn.on("click", function (event) {
-    //   event.preventDefault();
-    //   searchedCities = JSON.parse(localStorage.getItem('userInput'));
-    //   if (searchedCities == null) {
-    //     searchedCities = [];
-    //     console.log(searchedCities)
-      
-    //   }
-    //   fetchWeather();
-    // })
+    $(savedCitiesButtons).append(`<button class="">${searchedCitiesArr[i]}</button>`);
   }
 }    
-// })
-
-// function cityInfo () {
-//     var userRequest = localStorage.getItem('userInput')
-//     var lat
-//     var lon
-//     var geoURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + userRequest + "&limit=5&appid=8d68dd5ea4e78aa35a048f052125b784"
-//     console.log(geoURL);
-// }  
-//create function that handles the click event of the search history buttons
-
 
 function fetchWeather (){
 var geoURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + userCityInput.val() + "&limit=5&appid=8d68dd5ea4e78aa35a048f052125b784"
@@ -64,14 +42,10 @@ console.log(geoURL)
         lat = data[0].lat;
         lon = data[0].lon;
 
-        var cityName = $('.cityName')
-        .text(data[0].name) 
-        $("<h2>")
-          .text(data)
-        .appendTo(cityName);
-  
+      $('.cityName').text(data[0].name) 
+
         
-        console.log(weatherURL);
+  
         console.log(geoURL)
         var weatherURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat +"&lon=" + lon + "&units=imperial&exclude=minutely,hourly&appid=8d68dd5ea4e78aa35a048f052125b784"
         fetch(weatherURL)
@@ -84,6 +58,31 @@ console.log(geoURL)
         })
         .then(function (data) {
             console.log(data);
+
+            var currentWeather = $('.currentWeather');
+            currentWeather.empty()
+            var currentWeatherIcon = $("<img>").attr("src", `http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`)
+            var currentTemp = $("<li>")
+            .text(
+              "Temp: " + data.current.temp)
+            var currentWindSpeed = $("<li>")
+            .text(
+              "Wind: " + data.current.wind_speed)
+            var currentHumidity = $("<li>")
+            .text(
+              "Humidity: " + data.current.humidity)
+
+              currentWeather.append(currentWeatherIcon).append(currentTemp).append(currentWindSpeed).append(currentHumidity)
+            
+
+            var dailyWeather = $('dailyWeather');
+            $("<li>")
+            .text(
+              "Temp: " + data[0]
+            )
+            
+           
+
             // var currentWeather = $('.currentWeather')
             // .text(data[0].name.current.temp)
             // $("<h3>")
