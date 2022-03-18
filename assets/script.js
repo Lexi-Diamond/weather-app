@@ -124,6 +124,13 @@ function fetchWeather() {
             .append(dailyWind)
             .append(dailyHumidity);
 
+
+            var dailyWeather1 = $(".dailyWeather"); 
+            var dailyunixDate1 = (data.daily[2].dt)
+            var dailydate1 = new Date(dailyunixDate1*1000);
+            var dailyDate1 = new Date(dailydate1).toLocaleDateString("en-US")
+            console.log(dailyDate1)
+            $("<li>").text(dailyDate1)
           var dailyWeather1 = $(".dailyWeather1");
           var dailyWeatherIcon1 = $("<img>").attr(
             "src",
@@ -136,11 +143,18 @@ function fetchWeather() {
           );
 
           dailyWeather1
+            .append(dailyDate1)
             .append(dailyWeatherIcon1)
             .append(dailyTemp1)
             .append(dailyWind1)
             .append(dailyHumidity1);
 
+          var dailyWeather2 = $(".dailyWeather"); 
+          var dailyunixDate2 = (data.daily[3].dt)
+          var dailydate2 = new Date(dailyunixDate2*1000);
+          var dailyDate2 = new Date(dailydate2).toLocaleDateString("en-US")
+          console.log(dailyDate2)
+          $("<li>").text(dailyDate2)
           var dailyWeather2 = $(".dailyWeather2");
           var dailyWeatherIcon2 = $("<img>").attr(
             "src",
@@ -153,11 +167,18 @@ function fetchWeather() {
           );
 
           dailyWeather2
+            .append(dailyDate2)
             .append(dailyWeatherIcon2)
             .append(dailyTemp2)
             .append(dailyWind2)
             .append(dailyHumidity2);
 
+          var dailyWeather3 = $(".dailyWeather"); 
+          var dailyunixDate3 = (data.daily[4].dt)
+          var dailydate3 = new Date(dailyunixDate3*1000);
+          var dailyDate3 = new Date(dailydate3).toLocaleDateString("en-US")
+          console.log(dailyDate3)
+          $("<li>").text(dailyDate3)
           var dailyWeather3 = $(".dailyWeather3");
           var dailyWeatherIcon3 = $("<img>").attr(
             "src",
@@ -170,11 +191,18 @@ function fetchWeather() {
           );
 
           dailyWeather3
+            .append(dailyDate3)
             .append(dailyWeatherIcon3)
             .append(dailyTemp3)
             .append(dailyWind3)
             .append(dailyHumidity3);
 
+          var dailyWeather4 = $(".dailyWeather"); 
+          var dailyunixDate4 = (data.daily[5].dt)
+          var dailydate4 = new Date(dailyunixDate4*1000);
+          var dailyDate4 = new Date(dailydate4).toLocaleDateString("en-US")
+          console.log(dailyDate4)
+          $("<li>").text(dailyDate4)
           var dailyWeather4 = $(".dailyWeather4");
           var dailyWeatherIcon4 = $("<img>").attr(
             "src",
@@ -187,6 +215,7 @@ function fetchWeather() {
           );
 
           dailyWeather4
+            .append(dailyDate4)
             .append(dailyWeatherIcon4)
             .append(dailyTemp4)
             .append(dailyWind4)
