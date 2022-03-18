@@ -1,9 +1,12 @@
 .row {
-    flex-wrap: row;
-    margin-right: none;
-    margin-left: none;
+    flex-wrap: nowrap !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
 }
-img{
+img {
     max-width: 100px;
     max-height: 100px;
+}
+h5 {
+    font-size: 30px;
 }
